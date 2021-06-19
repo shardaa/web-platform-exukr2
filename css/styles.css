@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.color-blue {
+  background-color: #5a6f90;
+}
+
+.color-orange {
+  background-color: #ee5a36;
+}
+
+.color-light-blue {
+  color: #5a6f90;
+}
+
+.border-orange {
+  border: 1px solid #ee5a36;
+  border-radius: 5px;
+}
+
+.text-orange {
+  color: #ee5a36;
+}
+
+.text-blue {
+  color: #5a6f90;
+}
+
+.border-none {
+  border: none !important;
+}
+
+.border-bottom-dashed {
+  border-bottom: 1px dashed #5a6f90;
+}
+.tab {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tab .tab-div {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 20%;
+  min-width: 150px;
+}
+.tab .tab-div button {
+  width: 100%;
+  padding: 20px 0;
+  font-weight: bold;
+  border-right: 1px solid #5a6f90;
+  background-color: #f7f7f7;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button.active {
+  background-color: #5a6f90;
+  color: #fff;
+}
+
+.tab-layout {
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.modal-width {
+  width: 800px;
+}
+
+.checkbox-custom li {
+  margin: 0 10px;
+}
+
+.spiner {
+  background-color: #f7f7f7;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+td,
+th {
+  border: 1px solid black !important;
+  border-collapse: collapse;
+}
+
+.custom-card {
+  position: relative;
+}
+
+.custom-card.selected::before {
+  content: "Most Popular!";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  position: absolute !important;
+  margin: 0 0.8rem;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: auto;
+  background-color: #ee5a36;
+}
+.custom-card.selected .custom-card-btn {
+  background-color: #ee5a36;
+}
+.custom-card.selected .custom-card-btn button {
+  color: #fff;
+}
+
+tr td {
+  text-align: right;
+}
+tr td:nth-child(1),
+tr td:nth-child(2) {
+  text-align: left;
+}
+
+.offline {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: #5a6f90;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: #fff;
+}
+.offline:after {
+  content: "You are not connected to internet";
+}

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+  <div class="container font-monospace">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-width modal-lg ">
+        <div class="modal-content px-3">
+          <div class="modal-header ">
+            <h5 class="modal-title " id="exampleModalLabel">Get Started With SquadVoice</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="row">
+                <div class="col-12 text-blue">
+                  <span class="h5 fw-bold">Plan Selected: </span>
+                  <span id="modal-name">Qualified 40</span>
+                </div>
+              </div>
+              <div class="row mt-3 ">
+                <div class="mb-3 col-12">
+                  <label for="name" class="form-label text-blue fw-bold">Name</label>
+                  <input type="text" class="form-control fw-bold" name="name" id="name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="email" class="form-label text-blue fw-bold">Email address</label>
+                  <input type="email" class="form-control fw-bold" name="email" id="email">
+                </div>
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="phone" class="form-label text-blue fw-bold">Phone Number</label>
+                  <input type="tel" class="form-control fw-bold" name="phone" id="phone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="leadsCount" class="form-label text-blue fw-bold">Number of leads you
+                                        generate in
+                                        a
+                                        month</label>
+                  <input type="number" class="form-control fw-bold spiner" id="leadsCount"
+                                        nmae="leadsinmonth" placeholder="-">
+                </div>
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="LeadsInCRM" class="form-label text-blue fw-bold">Total Lead in
+                                        CRM</label>
+                  <input type="Number" class="form-control fw-bold spiner" id="LeadsInCRM"
+                                        name="totalleads" placeholder="-">
+                </div>
+              </div>
+              <div class="row">
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="CRMuse" class="form-label text-blue fw-bold">Which CRM do you
+                                        use?</label>
+                  <input type="number" class="form-control fw-bold spiner" id="CRMuse" placeholder="-"
+                                        name="crmuse">
+                </div>
+                <div class="mb-3 col-md-6 col-12">
+                  <label for="LeadsInCRM" class="form-label text-blue fw-bold">No. of Agents</label>
+                  <input type="Number" class="form-control fw-bold spiner" id="LeadsInCRM"
+                                        name="noifagent" placeholder="-">
+                </div>
+              </div>
+
+              <div class="mb-3 form-check p-0 m-0">
+                <p class="text-blue fw-bold m-0">What are your biggest Lead source?</p>
+                <ul class="d-flex list-inline fw-bold checkbox-custom">
+                  <li><input type="checkbox" value="Zillow">
+                    <label>Zillow</label>
+                  </li>
+                  <li><input type="checkbox" value="Realtor">
+                    <label>Realtor</label>
+                  </li>
+                  <li><input type="checkbox" value="Ylopo">
+                    <label>Ylopo</label>
+                  </li>
+                  <li><input type="checkbox" value="Others">
+                    <label>Others</label>
+                  </li>
+                </ul>
+
+              </div>
+
+              <div class="mb-3 form-check p-0 m-0">
+                <p class="text-blue fw-bold m-0">How did you hear about us</p>
+                <ul class="d-flex list-inline fw-bold checkbox-custom">
+                  <li><input type="checkbox" value="Google">
+                    <label>Google</label>
+                  </li>
+                  <li><input type="checkbox" value="Facebook">
+                    <label>Facebook</label>
+                  </li>
+                  <li><input type="checkbox" value="Email">
+                    <label>Email</label>
+                  </li>
+                  <li><input type="checkbox" value="Friends">
+                    <label>Friends</label>
+                  </li>
+                  <li><input type="checkbox" value="RealClosers">
+                    <label>Real Closers</label>
+                  </li>
+                </ul>
+
+              </div>
+              <button type="submit" onclick="showInputsValue()"
+                                class="btn text-white color-orange">Submit</button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="tab w-100">
+      <div class="tab-div "><button class="tablinks rounded-start" id="Tab1_button"
+                    onclick="openTab(event, 'Tab1')">$100K-$200K</button></div>
+      <div class="tab-div ">
+        <button class="tablinks" id="Tab2_button" onclick="openTab(event, 'Tab2')">$200K-$300K</button>
+      </div>
+      <div class="tab-div"><button class="tablinks" id="Tab3_button"
+                    onclick="openTab(event, 'Tab3')">$300K-$400K</button>
+      </div>
+      <div class="tab-div"><button class="tablinks" id="Tab4_button"
+                    onclick="openTab(event, 'Tab4')">$400K-$500K</button>
+      </div>
+      <div class="tab-div"><button class="tablinks rounded-end border-0" id="Tab5_button"
+                    onclick="openTab(event, 'Tab5')">$500K+</button></div>
+    </div>
+
+    <div class="row d-flex my-5">
+
+      <div class="col-lg-3 col-md-6 my-5 col-12 custom-card ">
+        <div class="col-12 color-blue">
+          <p class="p-3 text-center text-white">Qualified 20</p>
+        </div>
+
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class="h1 text-center mb-0  fw-bold">$69</p>
+            <p class="text-center font-with-300">Per Qualified lead</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Quaified Leads per month</p>
+            <p class="text-center">20</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Platform Fee Per Month</p>
+            <p class="text-center ">$299</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 color-blue text-white">
+          <p class="p-3 text-center  h4">$1,679/mo</p>
+        </div>
+        <div class="col-12 border-orange custom-card-btn text-center mt-3 p-1 text-capitalize">
+          <button onclick="showModal('Qualified 20')" class="btn text-orange fw-bold"> Start Your Trial
+                    </button>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-5 col-12 custom-card selected">
+        <div class="col-12 color-blue ">
+          <p class="p-3 text-center text-white">Qualified 40</p>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class="h1 text-center mb-0  fw-bold">$67</p>
+            <p class="text-center font-with-300">Per Qualified lead</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Quaified Leads per month</p>
+            <p class="text-center">40</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Platform Fee Per Month</p>
+            <p class="text-center ">$599</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 color-blue text-white">
+          <p class="p-3 text-center  h4">$3,279/mo</p>
+        </div>
+        <div class="col-12 border-orange custom-card-btn  text-center mt-3 p-1 text-capitalize">
+          <button onclick="showModal('Qualified 40')" class="btn fw-bold"> Start Your Trial
+                    </button>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-5 col-12 custom-card ">
+        <div class="col-12 color-blue ">
+          <p class="p-3 text-center text-white">Qualified 80</p>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class="h1 text-center mb-0  fw-bold">$63</p>
+            <p class="text-center font-with-300">Per Qualified lead</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class="border-bottom-dashed text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Quaified Leads per month</p>
+            <p class="text-center">80</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 ">
+          <div class=" text-blue text-capitalize">
+            <p class=" text-center mb-0 mt-1">Platform Fee Per Month</p>
+            <p class="text-center ">$799</p>
+          </div>
+        </div>
+        <div class="col-12 px-4 color-blue text-white">
+          <p class="p-3 text-center  h4">$5,839/mo</p>
+        </div>
+        <div class="col-12 border-orange  custom-card-btn  text-center p-1 mt-3 text-capitalize">
+          <button onclick="showModal('Qualified 80')" class="btn text-orange fw-bold"> Start Your Trial
+                    </button>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 my-5 col-12 custom-card ">
+        <div class="color-light-blue bg-light ">
+          <div class="col-12 color-blue ">
+            <p class="p-3 text-center text-white">Enterprise</p>
+          </div>
+          <div style="height:280px">
+
+            <div class="col-12 px-4 h-75 d-flex align-items-center ">
+              <p class="text-center text-blue h4">Want more than 80 qualified leads each month?</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 border-orange text-center p-1 mt-3">
+          <button onclick="showModal('More than 80')" class="btn text-orange fw-bold text-capitalize"> get in
+                        touch </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="Tab1" class="tabcontent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Average home price point</th>
+            <th scope="col">Plane name</th>
+            <th scope="col">Qualified leads per month</th>
+            <th scope="col">Price per live Transfer</th>
+            <th scope="col">Total qualified lead price</th>
+            <th scope="col">Total platform price</th>
+            <th scope="col">Final package price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">$100k-$200k</td>
+            <td>Qualified 20</td>
+            <td>20</td>
+            <td>$69</td>
+            <td>$1380</td>
+            <td>$299</td>
+            <td>$1679</td>
+          </tr>
+          <tr>
+            <td scope="row">$100k-$200k</td>
+            <td>Qualified 40</td>
+            <td>40</td>
+            <td>$67</td>
+            <td>$2680</td>
+            <td>$599</td>
+            <td>$3279</td>
+          </tr>
+          <tr>
+            <td scope="row">$100k-$200k</td>
+            <td>Qualified 60</td>
+            <td>60</td>
+            <td>$65</td>
+            <td>$3900</td>
+            <td>$699</td>
+            <td>$4599</td>
+          </tr>
+          <tr>
+            <td scope="row">$100k-$200k</td>
+            <td>Qualified 80</td>
+            <td>80</td>
+            <td>$63</td>
+            <td>$5040</td>
+            <td>$799</td>
+            <td>$5839</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div id="Tab2" class="tabcontent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Average home price point</th>
+            <th scope="col">Plane name</th>
+            <th scope="col">Qualified leads per month</th>
+            <th scope="col">Price per live Transfer</th>
+            <th scope="col">Total qualified lead price</th>
+            <th scope="col">Total platform price</th>
+            <th scope="col">Final package price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">$200k-$300k</td>
+            <td>Qualified 20</td>
+            <td>20</td>
+            <td>$79</td>
+            <td>$1580</td>
+            <td>$299</td>
+            <td>$1879</td>
+          </tr>
+          <tr>
+            <td scope="row">$200k-$300k</td>
+            <td>Qualified 40</td>
+            <td>40</td>
+            <td>$77</td>
+            <td>$3080</td>
+            <td>$599</td>
+            <td>$3679</td>
+          </tr>
+          <tr>
+            <td scope="row">$200k-$300k</td>
+            <td>Qualified 60</td>
+            <td>60</td>
+            <td>$74</td>
+            <td>$4440</td>
+            <td>$699</td>
+            <td>$5139</td>
+          </tr>
+          <tr>
+            <td scope="row">$200k-$300k</td>
+            <td>Qualified 80</td>
+            <td>80</td>
+            <td>$72</td>
+            <td>$5760</td>
+            <td>$799</td>
+            <td>$6559</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div id="Tab3" class="tabcontent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Average home price point</th>
+            <th scope="col">Plane name</th>
+            <th scope="col">Qualified leads per month</th>
+            <th scope="col">Price per live Transfer</th>
+            <th scope="col">Total qualified lead price</th>
+            <th scope="col">Total platform price</th>
+            <th scope="col">Final package price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">$300k-$400k</td>
+            <td>Qualified 20</td>
+            <td>20</td>
+            <td>$99</td>
+            <td>$1980</td>
+            <td>$299</td>
+            <td>$2279</td>
+          </tr>
+          <tr>
+            <td scope="row">$300k-$400k</td>
+            <td>Qualified 40</td>
+            <td>40</td>
+            <td>$96</td>
+            <td>$3840</td>
+            <td>$599</td>
+            <td>$4439</td>
+          </tr>
+          <tr>
+            <td scope="row">$300k-$400k</td>
+            <td>Qualified 60</td>
+            <td>60</td>
+            <td>$93</td>
+            <td>$5580</td>
+            <td>$699</td>
+            <td>$6279</td>
+          </tr>
+          <tr>
+            <td scope="row">$300k-$400k</td>
+            <td>Qualified 80</td>
+            <td>80</td>
+            <td>$90</td>
+            <td>$7200</td>
+            <td>$799</td>
+            <td>$7999</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div id="Tab4" class="tabcontent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Average home price point</th>
+            <th scope="col">Plane name</th>
+            <th scope="col">Qualified leads per month</th>
+            <th scope="col">Price per live Transfer</th>
+            <th scope="col">Total qualified lead price</th>
+            <th scope="col">Total platform price</th>
+            <th scope="col">Final package price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">$400k-$500k</td>
+            <td>Qualified 20</td>
+            <td>20</td>
+            <td>$109</td>
+            <td>$2180</td>
+            <td>$299</td>
+            <td>$2479</td>
+          </tr>
+          <tr>
+            <td scope="row">$400k-$500k</td>
+            <td>Qualified 40</td>
+            <td>40</td>
+            <td>$106</td>
+            <td>$4240</td>
+            <td>$599</td>
+            <td>$4839</td>
+          </tr>
+          <tr>
+            <td scope="row">$400k-$500k</td>
+            <td>Qualified 60</td>
+            <td>60</td>
+            <td>$102</td>
+            <td>$6120</td>
+            <td>$699</td>
+            <td>$6819</td>
+          </tr>
+          <tr>
+            <td scope="row">$400k-$500k</td>
+            <td>Qualified 80</td>
+            <td>80</td>
+            <td>$99</td>
+            <td>$7920</td>
+            <td>$799</td>
+            <td>$8719</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div id="Tab5" class="tabcontent">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Average home price point</th>
+            <th scope="col">Plane name</th>
+            <th scope="col">Qualified leads per month</th>
+            <th scope="col">Price per live Transfer</th>
+            <th scope="col">Total qualified lead price</th>
+            <th scope="col">Total platform price</th>
+            <th scope="col">Final package price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">$500K+</td>
+            <td>Qualified 20</td>
+            <td>20</td>
+            <td>$129</td>
+            <td>$2580</td>
+            <td>$299</td>
+            <td>$2879</td>
+          </tr>
+          <tr>
+            <td scope="row">$500K+</td>
+            <td>Qualified 40</td>
+            <td>40</td>
+            <td>$125</td>
+            <td>$5000</td>
+            <td>$599</td>
+            <td>$5599</td>
+          </tr>
+          <tr>
+            <td scope="row">$500K+</td>
+            <td>Qualified 60</td>
+            <td>60</td>
+            <td>$121</td>
+            <td>$7260</td>
+            <td>$699</td>
+            <td>$7959</td>
+          </tr>
+          <tr>
+            <td scope="row">$500K+</td>
+            <td>Qualified 80</td>
+            <td>80</td>
+            <td>$117</td>
+            <td>$9360</td>
+            <td>$799</td>
+            <td>$10159</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+
+  <div class="offline" id="offline"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <script src="script.js"></script>
+  <script src="/scripts/script.js"></script>
+</body>
+
+</html>
